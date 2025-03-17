@@ -95,5 +95,23 @@ export default defineConfig(({ mode }) => {
     //     }
     //   }
     // }
+    server: {
+      // 使用
+      // const url = "http://localhost:5173/api/3dtiles/tileset.json";
+      // 配置
+      proxy: {
+        "/api": {
+          target: "http://localhost:80/",// 目标服务地址
+          changeOrigin: true,// 允许跨域
+          rewrite: (path) => path.replace(/^\/api/, "")// 重写路径
+        },
+        // "/api1": {
+        //   target: "D:/server/nginx-1.19.10/html/3dtiles/",// 目标服务地址
+        //   changeOrigin: true,// 允许跨域
+        //   rewrite: (path) => path.replace(/^\/api1/, "")// 重写路径
+        // },
+        
+      }
+    }
   };
 });

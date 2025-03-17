@@ -29,7 +29,16 @@ const onClear = () => {
 const set3Dtitle3 = () => {
   let translation = Cesium.Cartesian3.fromArray([0, 0, 0]);
   let m = Cesium.Matrix4.fromTranslation(translation);
-  const url = "http://data.mars3d.cn/3dtiles/max-fsdzm/tileset.json";
+  // const url = "http://data.mars3d.cn/3dtiles/max-fsdzm/tileset.json";
+  // 北京延庆
+  // const url = "http://192.168.110.102:9811/gis-data/Photogrammetry/Beijing_Yanqing_Kangzhuang/tileset.json";
+  // 永川大安
+  // const url = "http://localhost:5173/api/3dtile/tileset.json";
+  // const url = "http://localhost/3dtiles/tileset.json";
+  const url = "http://localhost:5173/api/3dtiles/tileset.json";
+  // const url = "http://localhost:5173/api1/tileset.json";
+  
+  
   let tilesetJson = {
     url,
     // url: new Cesium.Resource({
@@ -68,7 +77,7 @@ const set3Dtitle3 = () => {
     debugFreezeFrame: false, // --- 仅用于调试。确定是否应仅使用最后一帧的图块进行渲染(默认false)
     debugColorizeTiles: false, // --- 仅用于调试。如果为 true，则为每个图块分配随机颜色(默认false)
     debugWireframe: false, // --- 仅用于调试。如果为 true，则将每个图块的内容渲染为线框(默认false)
-    debugShowBoundingVolume: false, // --- 仅用于调试。如果为 true，则为每个图块渲染边界体积(默认false)
+    debugShowBoundingVolume: true, // --- 仅用于调试。如果为 true，则为每个图块渲染边界体积(默认false)
     debugShowContentBoundingVolume: false, // --- 仅用于调试。如果为 true，则为每个图块的内容渲染边界体积(默认false)
     debugShowViewerRequestVolume: false, // --- 仅用于调试。如果为 true，则呈现每个图块的查看器请求量(默认false)
     debugShowGeometricError: false, // --- 仅用于调试。如果为 true，则绘制标签以指示每个图块的几何误差(默认false)
