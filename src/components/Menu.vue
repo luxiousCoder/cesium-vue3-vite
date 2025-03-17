@@ -24,7 +24,9 @@ const linkTo = (name, path) => {
     name,
   });
 };
-const defaultOpenArr = routes.map((item) => item.path);
+// 默认展开的路由
+// const defaultOpenArr = routes.map((item) => item.path);
+const defaultOpenArr = []
 
 watch(
   () => route.meta.activePath,
@@ -47,7 +49,8 @@ watch(
     :collapse="isCollapse"
     :default-openeds="defaultOpenArr"
     :default-active="activePath"
-  >
+    :unique-opened=true
+    >
     <el-sub-menu
       popper-class="pop-item"
       v-for="item in routes"

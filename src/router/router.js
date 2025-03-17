@@ -422,6 +422,24 @@ const routes = [
       },
     ],
   },
+  {
+    path: "/others",
+    component: EmptyRouterView,
+    meta: {
+      title: "其他案例",
+    },
+    children: [
+      {
+        path: "test",
+        name: "others_test",
+        component: () => import("@/views/others/test.vue"),
+        meta: {
+          title: "test案例",
+          activePath: "/others/test",
+        },
+      },
+    ],
+  },
 ];
 
 export default routes;
